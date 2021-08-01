@@ -8,9 +8,7 @@ class Card {
 		let name = "";
 
 		if (this.suit < 4 && this.number < 14) {
-			if (this.number == 0)
-				return;
-			else if (this.number == 1) 
+			if (this.number == 1) 
 				name = `Ás ${strings[this.suit]}`
 			else if (this.number == 11)
 				name = `Valete ${strings[this.suit]}`;
@@ -25,5 +23,13 @@ class Card {
 			if (this.suit == 5) name = "Joker Branco";
 		}
 		return name;
+	}
+
+	getNumber() {
+		return this.number;
+	}
+
+	getSuit() {
+		return strings[this.suit];
 	}
 }

@@ -19,12 +19,11 @@ for (let i = 0; i < allCards.length; i++) {
 
 let playerManager = new PlayerManager();
 
-let players = [];
+let players = {};
 
 // testing
 player1 = window.prompt('player1');
-playerManager.addPlayer(new Player(player1, allCards[2]));
-player2 = window.prompt('player2');
-playerManager.addPlayer(new Player(player2, allCards[3]));
+players[player1] = new Player(player1, allCards[50]);
+window.open(`/cards/${players[player1].card.getSuit()}/${players[player1].card.getNumber()}.png`);
 
-console.log(playerManager.getPlayerList())
+// console.log(playerManager.getPlayerList())
