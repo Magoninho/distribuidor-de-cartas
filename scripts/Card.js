@@ -19,8 +19,7 @@ class Card {
 			else 
 				name = `${this.number} ${strings[this.suit]}`;
 		} else {
-			if (this.suit == 4) name = "Joker Preto";
-			if (this.suit == 5) name = "Joker Branco";
+			if (this.suit == 4) name = "Joker";
 		}
 		return name;
 	}

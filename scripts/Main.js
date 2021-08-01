@@ -7,8 +7,8 @@ for (let suit = 0; suit < 4; suit++) {
 }
 
 // Generating jokers
-allCards.push(new Card(14, JOKER_PRETO));
-allCards.push(new Card(14, JOKER_VERMELHO));
+allCards.push(new Card(14, JOKER));
+allCards.push(new Card(14, JOKER));
 
 // Printing all cards
 for (let i = 0; i < allCards.length; i++) {
@@ -23,7 +23,7 @@ let players = {};
 
 // testing
 player1 = window.prompt('player1');
-players[player1] = new Player(player1, allCards[50]);
+players[player1] = new Player(player1, allCards[54]);
 window.open(`/cards/${players[player1].card.getSuit()}/${players[player1].card.getNumber()}.png`);
 
 // console.log(playerManager.getPlayerList())
