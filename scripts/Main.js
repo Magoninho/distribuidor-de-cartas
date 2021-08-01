@@ -23,7 +23,7 @@ let players = {};
 
 // testing
 player1 = window.prompt('player1');
-players[player1] = new Player(player1, allCards[54]);
-window.open(`/cards/${players[player1].card.getSuit()}/${players[player1].card.getNumber()}.png`);
+players[player1] = new Player(player1, allCards[52]);
+window.open(`/Cartas/${players[player1].card.getSuit()}/${players[player1].card.getNumber()}.png`);
 
 // console.log(playerManager.getPlayerList())
