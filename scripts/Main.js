@@ -17,8 +17,6 @@ for (let i = 0; i < allCards.length; i++) {
 }
 
 
-let playerManager = new PlayerManager();
-
 let players = {};
 
 
