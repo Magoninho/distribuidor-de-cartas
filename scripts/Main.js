@@ -31,7 +31,10 @@ function addPlayer(playerName) {
 		// Generates a player with a random card
 		players[playerName] = new Player(playerName, card);
 		// window.open(`/Cartas/${players[playerName].card.getSuit()}/${players[playerName].card.getNumber()}.png`);
-		document.getElementById('player-list').innerHTML += `${playerName}<br>`;
+		document.getElementById('player-list').innerHTML += `
+		${playerName}<br>
+		<img width='100' src='/Cartas/${players[playerName].card.getSuit()}/${players[playerName].card.getNumber()}.png'><br>
+		`;
 
 	} else {
 		alert('Já existe um jogador com esse nome na lista');
