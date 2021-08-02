@@ -21,26 +21,27 @@ let players = {};
 
 
 function addPlayer(playerName) {
-	// Checks if the player is not in the list before adding it
-	if (!(playerName in players)) {
-		let cardIndex = Math.floor(Math.random() * allCards.length);
-		let card = allCards[cardIndex];
-		allCards.splice(cardIndex, 1); // removing the card from the array because it can not be repeated
+	if (playerName) {
+		// Checks if the player is not in the list before adding it
+		if (!(playerName in players)) {
+			let cardIndex = Math.floor(Math.random() * allCards.length);
+			let card = allCards[cardIndex];
+			allCards.splice(cardIndex, 1); // removing the card from the array because it can not be repeated
 
-		// Generates a player with a random card
-		players[playerName] = new Player(playerName, card);
-		// window.open(`/Cartas/${players[playerName].card.getSuit()}/${players[playerName].card.getNumber()}.png`);
+			// Generates a player with a random card
+			players[playerName] = new Player(playerName, card);
+			// window.open(`/Cartas/${players[playerName].card.getSuit()}/${players[playerName].card.getNumber()}.png`);
 
-		// Adds the player name and the card image, according to the stuff inside the players dictionary
-		document.getElementById('player-list').innerHTML += `
+			// Adds the player name and the card image, according to the stuff inside the players dictionary
+			document.getElementById('player-list').innerHTML += `
 		${playerName}<br>
 		<img width='100' src='/Cartas/${players[playerName].card.getSuit()}/${players[playerName].card.getNumber()}.png'><br>
 		`;
 
-	} else {
-		alert('Já existe um jogador com esse nome na lista');
+		} else {
+			alert('Já existe um jogador com esse nome na lista');
+		}
 	}
-
 
 }
 
