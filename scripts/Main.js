@@ -35,6 +35,7 @@ function addPlayer(playerName) {
 		${playerName}<br>
 		<img width='100' src='/Cartas/${players[playerName].card.getSuit()}/${players[playerName].card.getNumber()}.png'><br>
 		`;
+		document.getElementById('playerName').value = '';
 
 	} else {
 		alert('Já existe um jogador com esse nome na lista');
