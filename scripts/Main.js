@@ -21,9 +21,27 @@ let playerManager = new PlayerManager();
 
 let players = {};
 
-// testing
-player1 = window.prompt('player1');
-players[player1] = new Player(player1, allCards[52]);
-window.open(`/Cartas/${players[player1].card.getSuit()}/${players[player1].card.getNumber()}.png`);
+function addPlayer(playerName) {
+	// Checks if the player is not in the list before adding it
+	if (!(playerName in players)) {
+		let cardIndex = Math.floor(Math.random() * 54);
+		let card = allCards[cardIndex];
+		allCards.splice(cardIndex, 1); // removing the card from the array because it can not be repeated
 
-// console.log(playerManager.getPlayerList())
+		// Generates a player with a random card
+		players[playerName] = new Player(playerName, card);
+		// window.open(`/Cartas/${players[playerName].card.getSuit()}/${players[playerName].card.getNumber()}.png`);
+		document.getElementById('player-list').innerHTML += `${playerName}<br>`;
+
+	} else {
+		alert('Já existe um jogador com esse nome na lista');
+	}
+
+
+}
+
+function removePlayer(playerName) {
+	if (playerName in players) {
+		delete players[playerName];
+	}
+}
