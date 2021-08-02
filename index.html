@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style/style.css">
 	<title>Distribuidor de cartas</title>
 </head>
+
 <body>
-	<div class="config">
-		<h1>Distribuidor de cartas</h1>
-		<h3>Adicionar jogadores</h3>
-		<input type="text" id="playerName" placeholder="Nome do jogador">
-		<input type="submit" value="Adicionar" onclick="addPlayer(document.getElementById('playerName').value)"></input>	
+	<div class="page">
+		<div class="config">
+			<h1>Distribuidor de cartas</h1>
+			<!-- <input type="text" id="playerName" placeholder="Nome do jogador"> -->
+			<button
+				onclick="addPlayer(window.prompt('Insira o nome do novo jogador:'))">Adicionar jogador</button>
+		</div>
+		<br><br>
+
+		<div id="player-list">
+
+		</div>
 	</div>
-
-	<br><br>
-
-	<div id="player-list">
-
-	</div>
-
 
 	<script src="scripts/Constants.js"></script>
 	<script src="scripts/PlayerManager.js"></script>
@@ -28,4 +31,5 @@
 	<script src="scripts/Main.js"></script>
 
 </body>
+
 </html>
